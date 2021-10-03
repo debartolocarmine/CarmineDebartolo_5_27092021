@@ -90,6 +90,9 @@ function loadProduct() {
                 submitA.innerText = 'Ajouter au panier';
                 submitA.href = '#';
                 submitA.classList.add("btn", "btn-primary");
+                submitA.onclick = function () {
+                    addToCard(produit._id, produit.name, produit.imageUrl, produit.price)
+                };
                 pTag(colContent4, submitA);
 
                 // On inject les col dans la row

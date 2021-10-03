@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Orinoco, créateur de sites e-commerce et applications thématiques">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" href="favicon.ico" />
+        <title>Orinoco, Applications e-commerces</title>
+    </head>
+
+    <body>
+
+        <!-- LINK SHIP CONTENT for ACCESSIBILITY -->
+        <a class="visually-hidden-focusable" href="#contenu-principal">Aller au contenu principal</a>
+        <!-- NAVBAR -->
+        <nav class="bg-navbar cd-navbar navbar navbar-expand-lg navbar-light link-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./images/logo-orinoco.png" alt="" width="200" title="Orinoco">
+                </a>
+                <ul class="cd-navbar-nav-m cd-shopping-mobile">
+                    <li class="cd-nav-item">
+                        <a class="cd-nav-link" href="./card.html" title="Ouvrir le panier">
+                            <span class="cd-i">
+                                <i class="bi bi-cart"></i>
+                                <i id="cd-shopping-count-m"></i>
+                            </span>
+                            <span class="cd-l">
+                                Panier
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <a class="navbar-brand" href="./index.html">Orinoco</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
+                    aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <div class="navbar-wrapper">
+                        <ul class="cd-nav-left cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link active" href="./index.html" title="Page principal">
+                                    <span class="cd-i">
+                                        <i class="bi bi-house-door"></i>
+                                    </span>
+                                    <span class="cd-l">Acceuil</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Consulter notre catalogue">
+                                    <span class="cd-i">
+                                        <i class="bi bi-diagram-3"></i>
+                                    </span>
+                                    <span class="cd-l">Catalogue</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Nos derniers billets de blog">
+                                    <span class="cd-i">
+                                        <i class="bi bi-joystick"></i>
+                                    </span>
+                                    <span class="cd-l">Blog</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Contactez-nous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+                                    <span class="cd-l">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="cd-nav-middle cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="./card.html" title="Ouvrir le panier">
+                                    <span class="cd-i">
+                                        <i class="bi bi-cart"></i>
+                                        <i id="cd-shopping-count"></i>
+                                    </span>
+                                    <span class="cd-l">Panier</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="cd-nav-right cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Paramètres d'accessibilités">
+                                    <span class="cd-i">
+                                        <i class="bi bi-eye-slash"></i>
+                                    </span>
+                                    <span class="cd-l">Paramètres d'accessibilités</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Connectez-vous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+                                    <span class="cd-l">Connexion</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Demander un nouveau mot de passe">
+                                    <span class="cd-i">
+                                        <i class="bi bi-key"></i>
+                                    </span>
+                                    <span class="cd-l">Mot de passe</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Inscrivez-vous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-pen"></i>
+                                    </span>
+                                    <span class="cd-l">Inscription</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HIGHLITED -->
+        <div class="container">
+            <!-- ROW TITLE -->
+            <div class="row my-3 cd-pager-store cd-pt-100">
+                <div class="col">
+                    <div class="cd-pager-store mt-2">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item"><a class="" href="./index.html"><i class="bi bi-arrow-left"></i>
+                                    Retour</a></li>
+                            <li class="list-group-item active"><i class="bi bi-info-circle"></i> Informations</li>
+                            <!-- <li class="list-group-item"><i class="bi bi-credit-card"></i> Payer</li> -->
+                            <li class="list-group-item"><i class="bi bi-cart-check"></i> Merci</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW SHOPPING CARD -->
+            <div class="row g-2 g-lg-3">
+                <h1>Panier</h1>
+                <!-- MAIN -->
+                <main id="contenu-principal" class="cd-card container">
+                    <div class="row">
+                        <div class="col-12 my-4">
+                            <div class="spinner-border text-info" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <div id="cd-load-total"></div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./card.html" onclick="clearLocalStorage()"><span>Vider le panier</span></a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- ROW FORM INFORMATION -->
+            <form id="cdInformationCustomer" class="needs-validation mb-5" novalidate>
+                <div class="row g-2">
+                    <h2>Informations</h2>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cdFormFirstname" pattern=".{3,}" value="" required>
+                            <label for="cdFormFirstname">Prénom</label>
+                            <div class="invalid-feedback">
+                                Le prénom ne peut etre vide et doit contenir minimum 3 caractères.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cdFormName" pattern=".{3,}" value="" required>
+                            <label for="cdFormName">Nom</label>
+                            <div class="invalid-feedback">
+                                Le nom ne peut etre vide et doit contenir minimum 3 caractères.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cdFormAddress" pattern=".{3,}" value="" required>
+                            <label for="cdFormAddress">Adresse</label>
+                            <div class="invalid-feedback">
+                                L'adresse ne peut etre vide et doit contenir minimum 3 caractères.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cdFormCity" pattern=".{2,}" value="" required>
+                            <label for="cdFormCity">Ville</label>
+                            <div class="invalid-feedback">
+                                La ville ne peut etre vide et doit contenir minimum 2 caractères.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="cdFormEmail" value="" required>
+                            <label for="cdFormEmail">Courriel</label>
+                            <div class="invalid-feedback">
+                                Veuillez renseigner un email valide.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!-- <button type="submit" class="btn btn-primary">Acheter</button> -->
+                        <div class="d-grid gap-2">
+                            <button id="cdFormOrderSubmit" class="cd-submit-form btn btn-success" type="submit" disabled>Acheter</button>
+                            <a class="btn btn-primary" href="./index.html" role="button">Retour</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+        <footer class="cd-footer-bt bg-footer-bt">
+            <div class="container py-5">
+                <div class="col-12 text-center">
+                    <small>Copyright 2021 by Orinoco. All Rights Reserved. Orinoco is Powered by Carmine David
+                        Studio.</small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <!-- Script des utilities -->
+        <script src="./js/utilities.js"></script>
+        <!--Script app -->
+        <script src="./js/card.js"></script>
+
+    </body>
+
+</html>

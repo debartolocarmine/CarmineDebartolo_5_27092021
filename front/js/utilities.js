@@ -52,3 +52,81 @@ function getParameterId() {
 
     return _id;
 }
+
+/*
+ * getCard() 
+ *  fonction qui renvoie le panier ou null si vide
+ *
+ */
+function getCard() {
+    // On prépare une variable
+    let shoppingCardParse = null
+    // On récupere le panier danslelocalStorage
+    let shoppingCard = localStorage.getItem('panier');
+    // Si lepanier existe on le parse sinon on renvoie null
+    if (shoppingCard) {
+        shoppingCardParse = JSON.parse(shoppingCard);
+    }
+    return shoppingCardParse;
+}
+
+/*
+ * storeLocalStorageInString()
+ *    Fonction permettant de d'enregister un objet en chaine de caractéres dans le locaStorage 
+ * 
+ * @param key
+ *    la clef de l'élément a ajouter 
+ * @param value
+ *    la valeur de l'élément a ajouter    
+ * 
+ */
+function storeLocalStorageInString(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
+/*
+ * addToCard()
+ *    Fonction permettant d'ajouter un produit au panier
+ * 
+ * @param id
+ *    l'id du produit a ajouter
+ * @param name
+ *   le nom du produit a ajouter
+ * @param img
+ *   l'image du produit a ajouter
+ * @param price
+ *   le prix du produit a ajouter 
+ * 
+ */
+function addToCard(id, name , img, price) {
+    let product = {};
+
+    let card = getCard();
+
+    if (card && Array.isArray(card) && card.length != 0) {
+     
+
+        product = {
+            id, name, img, price
+        }
+
+        card.push(product);
+
+        storeLocalStorageInString('panier', card);
+
+    }else{
+        product = {
+          id, name, img, price
+        }
+        storeLocalStorageInString('panier', [product]);
+    }
+}
+
+/*
+ * clearLocalStorage()
+ *    Fonction permettant de vider le localStorage
+ * 
+ */
+function clearLocalStorage(){
+    localStorage.clear()
+}
