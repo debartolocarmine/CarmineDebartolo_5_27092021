@@ -40,16 +40,16 @@ function submitOrder(contact, card){
     .then(res => {
         // Si je reçois une réponse positive
         if (res) {
-            // J'enregistre dans le local storage le numero de commande
+            // On enregistre dans le localstorage le numero de commande
             // Ainsi que l'objet contact du customer pour l'afficher dans la page remerciement.
-            // localStorage.setItem('contact', JSON.stringify(contact));
             storeLocalStorageInString('contact', contact)
-            // Je vide le panier
+            // On enregistre dans le localStorage le montant totalde la commande
+            setTotalPrice();
+            // On vide le panier
             localStorage.removeItem('panier');
-            // Je store l'id dela commande
+            // On store l'id de la commande
             localStorage.setItem('contactOrderId', res.orderId);
-            // storeCard('contactOrderId', res.orderId)
-            // Puis je redirige le customer sur la page remerciment
+            // Puis On redirige le customer sur la page remerciment
             window.location.href = "./merci.html";
         }else{
           // TODO : Préparer un messsage en cas d'echec de requête

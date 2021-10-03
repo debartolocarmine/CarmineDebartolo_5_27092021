@@ -123,6 +123,43 @@ function addToCard(id, name , img, price) {
 }
 
 /*
+ * getTotalPrice() 
+ *  fonction qui enregistre dans le localstorage le montant total du panier
+ *
+ */
+function setTotalPrice() {
+
+    // Prépare la variable de retour
+    let totalPrice = 0;
+    
+    // Je récupère le panier dans le localStorage
+    let card = getCard();
+    // Si le panier existe
+    // Je loope le panier pour récupèrer le prix et l'additionner
+    if (card && Array.isArray(card) && card.length != 0) {
+        // Loop des produits
+        for (let produit of card) {
+            // A chaque loop je récupere le prix pour l'ajouter à la variable Total price
+            totalPrice = parseInt(produit.price) + totalPrice
+        }
+        // On enregistre le total de lacommande dans le localstorage
+        localStorage.setItem('totalOrder', totalPrice);
+    }
+    
+}
+
+/*
+ * getTotalPrice() 
+ *  Return le total de la commande
+ *
+ */
+function getTotalPrice() {
+    let total = localStorage.getItem('totalOrder');
+    console.log(total)
+    return total !== '' ? formatPriceToCurrency(parseInt(total)) : null;
+}
+
+/*
  * clearLocalStorage()
  *    Fonction permettant de vider le localStorage
  * 
