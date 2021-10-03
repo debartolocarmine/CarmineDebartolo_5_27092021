@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Orinoco, créateur de sites e-commerce et applications thématiques" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" href="favicon.ico" />
+        <title>Orinoco, Applications e-commerces</title>
+    </head>
+
+    <body>
+        <!-- LINK SHIP CONTENT for ACCESSIBILITY -->
+        <a class="visually-hidden-focusable" href="#contenu-principal">Aller au contenu principal</a>
+        <!-- NAVBAR -->
+        <nav class="
+            cd-navbar
+            bg-navbar
+            navbar navbar-expand-lg navbar-light
+            link-light
+            fixed-top
+        ">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./images/logo-orinoco.png" alt="" width="200" title="Orinoco" />
+                </a>
+                <ul class="cd-navbar-nav-m cd-shopping-mobile">
+                    <li class="cd-nav-item">
+                        <a class="cd-nav-link" href="./card.html" title="Ouvrir le panier">
+                            <span class="cd-i">
+                                <i class="bi bi-cart"></i>
+                                <i id="cd-shopping-count-m"></i>
+                            </span>
+                            <span class="cd-l"> Panier </span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <a class="navbar-brand" href="./index.html">Orinoco</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
+                    aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <div class="navbar-wrapper">
+                        <ul class="cd-nav-left cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link active" href="./index.html" title="Page principal">
+                                    <span class="cd-i">
+                                        <i class="bi bi-house-door"></i>
+                                    </span>
+                                    <span class="cd-l">Acceuil</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Consulter notre catalogue">
+                                    <span class="cd-i">
+                                        <i class="bi bi-diagram-3"></i>
+                                    </span>
+                                    <span class="cd-l">Catalogue</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Nos derniers billets de blog">
+                                    <span class="cd-i">
+                                        <i class="bi bi-joystick"></i>
+                                    </span>
+                                    <span class="cd-l">Blog</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Contactez-nous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+                                    <span class="cd-l">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="cd-nav-middle cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="./card.html" title="Ouvrir le panier">
+                                    <span class="cd-i">
+                                        <i class="bi bi-cart"></i>
+                                        <i id="cd-shopping-count"></i>
+                                    </span>
+                                    <span class="cd-l">Panier</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="cd-nav-right cd-navbar-nav">
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Paramètres d'accessibilités">
+                                    <span class="cd-i">
+                                        <i class="bi bi-eye-slash"></i>
+                                    </span>
+                                    <span class="cd-l">Paramètres d'accessibilités</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Connectez-vous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+                                    <span class="cd-l">Connexion</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Demander un nouveau mot de passe">
+                                    <span class="cd-i">
+                                        <i class="bi bi-key"></i>
+                                    </span>
+                                    <span class="cd-l">Mot de passe</span>
+                                </a>
+                            </li>
+                            <li class="cd-nav-item">
+                                <a class="cd-nav-link" href="#" title="Inscrivez-vous">
+                                    <span class="cd-i">
+                                        <i class="bi bi-pen"></i>
+                                    </span>
+                                    <span class="cd-l">Inscription</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN -->
+        <main id="contenu-principal" class="cd-product container cd-pt-100">
+            <div class="row">
+                <div class="col-12 my-4">
+                    <div class="spinner-border text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="cd-footer bg-footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-5 d-flex justify-content-center">
+                        <p class="footer-brand">
+                            <img src="./images/logo-orinoco-icon.png" alt="" width="100" title="Orinoco" />
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 mb-5">
+                        <!-- START MENU AIDE -->
+                        <div class="cd-aide">
+                            <h2>À PROPOS</h2>
+                            <ul class="cd-ftr-list">
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-cart2"></i></span>
+                                        <span class="cd-l">Conditions générales de ventes</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-person-square"></i></span>
+                                        <span class="cd-l">Conditions générales d'utilisation du compte</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-brush"></i></span>
+                                        <span class="cd-l">Données personnelles</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-building"></i></span>
+                                        <span class="cd-l">Mentions légales</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-emoji-wink"></i></span>
+                                        <span class="cd-l">Cookies</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-emoji-sunglasses"></i></span>
+                                        <span class="cd-l">Gérer mes cookies</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-award"></i></span>
+                                        <span class="cd-l">Avis</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 mb-5">
+                        <!-- START MENU AIDE -->
+                        <div class="cd-aide">
+                            <h2>SAV & SERVICES</h2>
+                            <ul class="cd-ftr-list">
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-brightness-high"></i></span>
+                                        <span class="cd-l">SAV</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-chat-quote"></i></span>
+                                        <span class="cd-l">Besoin d'aide ?</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-envelope"></i></span>
+                                        <span class="cd-l">Contactez-nous !</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-gift"></i></span>
+                                        <span class="cd-l">Cartes cadeaux</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-bricks"></i></span>
+                                        <span class="cd-l">Sécurité</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 mb-5">
+                        <!-- START MENU AIDE -->
+                        <div class="cd-aide">
+                            <h2>ORINOCO</h2>
+                            <ul class="cd-ftr-list">
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-eyeglasses"></i></span>
+                                        <span class="cd-l">Qui sommes nous ?</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-gem"></i></span>
+                                        <span class="cd-l">Recrutement</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-recycle"></i></span>
+                                        <span class="cd-l">Développement durable</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link active" href="#" title="Paramètres d'accessibilités">
+                                        <span class="cd-i"><i class="bi bi-eye-slash"></i></span>
+                                        <span class="cd-l">Paramètres d'accessibilités</span>
+                                    </a>
+                                </li>
+                                <li class="cd-ftr-item">
+                                    <a class="nav-link" href="#">
+                                        <span class="cd-i"><i class="bi bi-recycle"></i></span>
+                                        <span class="cd-l">Plan du site</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- FOOTER BOTTOM -->
+        <footer class="cd-footer-bt bg-footer-bt">
+            <div class="container py-5">
+                <div class="col-12 text-center">
+                    <small>Copyright 2021 by Orinoco. All Rights Reserved. Orinoco is Powered
+                        by Carmine David Studio.</small>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <!-- Script des utilities -->
+        <script src="./js/utilities.js"></script>
+        <!-- Script app -->
+        <script src="./js/produit.js"></script>
+    </body>
+
+</html>

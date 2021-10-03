@@ -31,3 +31,24 @@ function formatPriceToCurrency(price, country = 'fr-FR', currency = 'EUR') {
     return priceToConvert
 }
 
+/*
+ * getParameterId() 
+ *  fonction qui renvoie les ids passés dans l'url
+ *
+ */
+function getParameterId() {
+    let _id = null;
+    //je récupère le parametre search de l'objet location de window
+    //qui renvois tous les paramètres passés dans l'url 
+    const paramatersString = window.location.search;
+    // Si des paramètres existes
+    // On les passe à la fonction javascript URLSearchParams
+    if (paramatersString) {
+        //Je convertis avec la fonction urlSearchParams qui me transforme la string obtenue dans l'url en objet
+        const urlParams = new URLSearchParams(paramatersString);
+        //Ce qui me permet d'appeler les parametres par leur nom(id)
+        _id = urlParams.get('_id')
+    }
+
+    return _id;
+}
