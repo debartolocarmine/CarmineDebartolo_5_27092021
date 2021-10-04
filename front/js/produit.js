@@ -7,7 +7,6 @@ const _id = getParameterId()
 
 // On construit le endpoint d'envois de commande au quel on ajoute l'id récuperé dans l'url
 const url = endPoint + catalogue + '/' + _id;
-console.log(url)
 
 // Fonction permettant de créer un élément html
 // Méthode utilisée uniquement pour la page produit

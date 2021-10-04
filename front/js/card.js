@@ -124,7 +124,6 @@ function loadCard(){
                     // Tant que les champs ne sont pas correctement renseignés
                     // J'affiche les message erreurs au customer
                     if (!form.checkValidity()) {
-                    // console.log('NOO')
                     // Need validation
                     }else{
                         // Si les informations fournies par le customer sont valides

@@ -33,7 +33,7 @@ function formatPriceToCurrency(price, country = 'fr-FR', currency = 'EUR') {
 
 /*
  * getParameterId() 
- *  fonction qui renvoie les ids passés dans l'url
+ *  fonction qui renvoie le paramétre id passé dans l'url
  *
  */
 function getParameterId() {
@@ -46,7 +46,6 @@ function getParameterId() {
     if (paramatersString) {
         //Je convertis avec la fonction urlSearchParams qui me transforme la string obtenue dans l'url en objet
         const urlParams = new URLSearchParams(paramatersString);
-        //Ce qui me permet d'appeler les parametres par leur nom(id)
         _id = urlParams.get('_id')
     }
 
@@ -123,7 +122,7 @@ function addToCard(id, name , img, price) {
 }
 
 /*
- * getTotalPrice() 
+ * setTotalPrice() 
  *  fonction qui enregistre dans le localstorage le montant total du panier
  *
  */
@@ -155,7 +154,6 @@ function setTotalPrice() {
  */
 function getTotalPrice() {
     let total = localStorage.getItem('totalOrder');
-    console.log(total)
     return total !== '' ? formatPriceToCurrency(parseInt(total)) : null;
 }
 

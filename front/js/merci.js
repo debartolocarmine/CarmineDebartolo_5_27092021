@@ -21,7 +21,6 @@ function thanks(){
 
         // je calcule le montant total des produits dans le panier
         let totalPrice = getTotalPrice();
-        console.log(totalPrice)
 
         // Je build mon template avec les variables nécéssaires
         templeteMerci += `<div class="row"><div class="col-sm-12">

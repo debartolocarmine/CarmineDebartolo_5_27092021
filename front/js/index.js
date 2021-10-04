@@ -1,4 +1,4 @@
-// On récupère la div dans laquelle l'on va injecter l'html de la page
+// On récupère la div avec la méthode document.getElementById dans laquelle l'on va injecter l'html de la page
 let myApp = document.getElementById('contenu-principal');
 
 // On construit le endpoint d'envois de commande
@@ -10,11 +10,18 @@ function loadListProducts() {
 
     // On déclare notre variable de retour
     let templeteProducts = ''; 
-    // la requête qui injecte l'html
-    fetch(url)
-    .then((resp) => resp.json())
-    .then(function(produits) {
 
+    // la requête fetch prend en argument le chemin de la ressource (url) que nous souhaitons récupérer 
+    // et que nous souhaitons injecter dans l'html 
+    fetch(url)
+
+    // et renvoie une promesse(promise) contenant, en réponse de la part du navigateur, un objet (de type Response).
+    // puis la promesse est retourné parsée au format JSON (objet contenant les données).
+    .then((resp) => resp.json())
+    
+    // une autre promesse est crée dans la quelle une fonction contient le resultat de ce resp.jon.
+    .then(function(produits) {
+    console.log(produits)
         // j'ouvre la div template
         templeteProducts += '<div class="row">';  
 
@@ -32,6 +39,7 @@ function loadListProducts() {
                             </h5>
                             <p class="card-text">${formatPriceToCurrency(parseInt(produit.price))}</p>
                             <p class="card-text"> ${produit.description}</p>
+                            <p class="card-text"> ${produit.colors}</p>
                             <a href="#" class="btn btn-primary" onclick="event.preventDefault();addToCard('${produit._id}', '${produit.name}', '${produit.imageUrl}', '${produit.price}')">Ajouter au panier</a>
                         </div>
                     </div>
