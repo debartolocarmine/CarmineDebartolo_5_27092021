@@ -40,8 +40,9 @@ function pTag(parent, el) {
 
 // Fonction réalisant la requête fetch d'un produit
 function loadProduct() {
-    //je lance ma requête avec la fonction fetch
-    fetch(url)
+    if (_id) {
+       //je lance ma requête avec la fonction fetch
+        fetch(url)
         .then((resp) => resp.json())
         .then(function(produit) {
             // on test si un produit nous est retourné. 
@@ -106,7 +107,12 @@ function loadProduct() {
         .catch(function(error) {
             myApp.innerHTML = `<h2>Erreur de requete.</h2>
             <p>Veuillez contacter l'administrateur.</p>`
-        });
+        }); 
+    }else{
+        myApp.innerHTML = `<h2>Erreur de paramètre.</h2>
+            <p>Veuillez contacter l'administrateur.</p>`
+    }
+    
 }
 
 // Je load le produit

@@ -46,7 +46,10 @@ function getParameterId() {
     if (paramatersString) {
         //Je convertis avec la fonction urlSearchParams qui me transforme la string obtenue dans l'url en objet
         const urlParams = new URLSearchParams(paramatersString);
-        _id = urlParams.get('_id')
+        if(urlParams.has('_id') === true){
+            //Ce qui me permet d'appeler les parametres par leur nom(id)
+           _id = urlParams.get('_id')
+        }
     }
 
     return _id;
