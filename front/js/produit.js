@@ -62,6 +62,7 @@ function loadProduct() {
                 // je crée un élément div avec class COL-SM-8 pour l'image
                 let colContent8 = createNode('div');
                 colContent8.classList.add("col-sm-8","my-5");
+
                 // je crée un élément img
                 let img = createNode('img');
                 // et je lui renseigne la source de l'image et un class fluide pour le responsive
@@ -73,19 +74,37 @@ function loadProduct() {
                 // je crée un élément div avec class COL-SM-4 pour les infos
                 let colContent4 = createNode('div');
                 colContent4.classList.add("col-sm-4","my-5");
-                // je crée un élément h1 avec avec en innertext le titre du produit
+                
+                // je crée un élément h1 avec en innertext le titre du produit
                 let titleH1 = createNode('h1');
                 titleH1.innerText = produit.name;
                 pTag(colContent4, titleH1);
-                // je crée un élément strong avec avec en innertext le prix du produit
+
+                // je crée un élément strong avec en innertext le prix du produit
                 let prixP = createNode('strong');
                 prixP.innerText = formatPriceToCurrency(parseInt(produit.price));
                 pTag(colContent4, prixP);
-                // je crée un élément p avec avec en innertext la description du produit
+
+                // je crée un élément select avec en innertext les attributs du produit
+                let attributeOption = createNode('select');
+                attributeOption.classList.add('form-select', 'my-2');
+                attributeOption.setAttribute('aria-label', 'select attribut')           
+                //je requête comme un tableau l'objet produit
+                let allAttrs = produit[getAttributType()];
+                for (const atr in allAttrs) {
+                   let option = createNode('option');
+                   option.setAttribute('value',allAttrs[atr]);
+                   option.innerText = allAttrs[atr];
+                   pTag(attributeOption, option )
+                }
+                pTag(colContent4, attributeOption);
+
+                // je crée un élément p avec en innertext la description du produit
                 let descriptionP = createNode('p');
                 descriptionP.innerText = produit.description;
                 pTag(colContent4, descriptionP);
-                // je crée un élément button avec avec en innertext 'Ajout au panier'
+
+                // je crée un élément button avec en innertext 'Ajout au panier'
                 let submitA = createNode('a');
                 submitA.innerText = 'Ajouter au panier';
                 submitA.href = '#';

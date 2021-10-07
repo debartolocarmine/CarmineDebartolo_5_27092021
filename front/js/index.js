@@ -39,7 +39,6 @@ function loadListProducts() {
                             </h5>
                             <p class="card-text">${formatPriceToCurrency(parseInt(produit.price))}</p>
                             <p class="card-text"> ${produit.description}</p>
-                            <p class="card-text"> ${produit.colors}</p>
                             <a href="#" class="btn btn-primary" onclick="event.preventDefault();addToCard('${produit._id}', '${produit.name}', '${produit.imageUrl}', '${produit.price}')">Ajouter au panier</a>
                         </div>
                     </div>

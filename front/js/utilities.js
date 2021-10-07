@@ -1,5 +1,23 @@
 const endPoint = 'http://localhost:3000/api/';
-const catalogue = 'cameras';
+const catalogue = 'furniture';
+// teddies|colors or furniture|varnish or cameras|lenses
+// const product_atribut = 'lenses'
+
+/*
+ * getAttributType()
+ *    Fonction permettant les attributs des produits du cataloge en cour 
+ */
+
+function getAttributType(){
+    // oncrée un objet  avec des clefs: valeurs  dont le catalogueencour est la clef et l'attribut sa valeure 
+    let nededAtribut = {
+        cameras: 'lenses',
+        teddies: 'colors',
+        furniture: 'varnish'
+    }
+    //j'interroge cet objet comme un tableau (versus  point notation)
+    return nededAtribut[catalogue ? catalogue : 'cameras'];
+}
 
 /*
  * formatPriceToCurrency()
