@@ -106,8 +106,7 @@ function submitOrder(contact, card) {
                 // On enregistre dans le localstorage le numero de commande
                 // Ainsi que l'objet contact du customer pour l'afficher dans la page remerciement.
                 storeLocalStorageInString('contact', contact)
-                // On enregistre dans le localStorage le montant totalde la commande
-                setTotalPrice();
+              
                 // On vide le panier
                 localStorage.removeItem('panier');
                 // On store l'id de la commande
@@ -132,6 +131,8 @@ function loadCard() {
     // Si le panier existe 
     // Je constuit mon template
     if (card) {
+          // On enregistre dans le localStorage le montant totalde la commande
+          setTotalPrice();
 
         templeteCard += `<div class="row"><div class="col-sm-12"><table class="table">
         <thead>
@@ -143,6 +144,7 @@ function loadCard() {
             </tr>
         </thead>
         <tbody>`;
+
         // je loop mon panier pour afficher les produits
         card.map(function (produit, e) {
             templeteCard += `<tr>
@@ -151,10 +153,20 @@ function loadCard() {
                 <td>${produit.name}</td>
                 <td>${formatPriceToCurrency(parseInt(produit.price))}</td>
             </tr>`
-        });
+            }
+        );
+        templeteCard += `</tbody><tfooter>
+        <tr> 
+            <th></th>
+            <th></th>          
+            <th></th>
+            <th>Total<br>${getTotalPrice()}</th>
+        </tr>`;
+   
+        
 
         // Je clôture mon template
-        templeteCard += `</tbody></table></div></div>`;
+        templeteCard += ` </tfooter></table></div></div>`;
 
 
         validateFormBeforSubmit(card);
