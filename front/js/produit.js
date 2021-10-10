@@ -4,9 +4,9 @@ let myApp = document.getElementById('contenu-principal');
 // Je récupère l'id du produit a afficher dans l'url
 const _id = getParameterId()
 
-
+console.log(_id)
 // On construit le endpoint d'envois de commande au quel on ajoute l'id récuperé dans l'url
-const url = endPoint + catalogue + '/' + _id;
+const url = endPoint + catalogue + _id;
 
 // Fonction permettant de créer un élément html
 // Méthode utilisée uniquement pour la page produit
@@ -82,13 +82,15 @@ function loadProduct() {
 
                 // je crée un élément strong avec en innertext le prix du produit
                 let prixP = createNode('strong');
-                prixP.innerText = formatPriceToCurrency(parseInt(produit.price));
+                prixP.innerText = formatPriceToCurrency(parseInt(produit.price), 'en-EN', 'USD');
                 pTag(colContent4, prixP);
 
                 // je crée un élément select avec en innertext les attributs du produit
                 let attributeOption = createNode('select');
                 attributeOption.classList.add('form-select', 'my-2');
-                attributeOption.setAttribute('aria-label', 'select attribut')           
+                attributeOption.setAttribute('aria-label', 'select attribut')
+                //ajout d'un id specifique au select form pour récuperer la valeur de l'attribut du produit
+                attributeOption.setAttribute('id', 'add-Card-' + produit._id)       
                 //je requête comme un tableau l'objet produit
                 let allAttrs = produit[getAttributType()];
                 for (const atr in allAttrs) {

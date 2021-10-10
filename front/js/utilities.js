@@ -37,15 +37,15 @@ function formatPriceToCurrency(price, country = 'fr-FR', currency = 'EUR') {
     // Prépare la variable de retour
     let priceToConvert = null
 
-    // Si le prix a formatter existe et qu'il est de type integer
-    // Formate le
-    if (price && typeof price == 'number') {
-        // le prix original est en centimes 
-        // On le converti en le divisant par 100
-        let formatedprice = price / 100
-        // On utilise la fonction javascipt toLocaleString pour formatter le prix dans la divise euros
-        priceToConvert = formatedprice.toLocaleString(country, { style: 'currency', currency: currency, minimumFractionDigits: 2 })
-    }
+        // Si le prix a formatter existe et qu'il est de type integer
+        // Formate le
+        if (price && typeof price == 'number') {
+            // le prix original est en centimes 
+            // On le converti en le divisant par 100
+            let formatedprice = price / 100
+            // On utilise la fonction javascipt toLocaleString pour formatter le prix dans la divise euros
+            priceToConvert = formatedprice.toLocaleString(country, { style: 'currency', currency: currency, minimumFractionDigits: 2 })
+        }
     return priceToConvert
 }
 
@@ -66,7 +66,7 @@ function getParameterId() {
         const urlParams = new URLSearchParams(paramatersString);
         if(urlParams.has('_id') === true){
             //Ce qui me permet d'appeler les parametres par leur nom(id)
-           _id = urlParams.get('_id')
+           _id = '/' + urlParams.get('_id')
         }
     }
 
@@ -81,9 +81,9 @@ function getParameterId() {
 function getCard() {
     // On prépare une variable
     let shoppingCardParse = null
-    // On récupere le panier danslelocalStorage
+    // On récupere le panier dans le localStorage
     let shoppingCard = localStorage.getItem('panier');
-    // Si lepanier existe on le parse sinon on renvoie null
+    // Si le panier existe on le parse sinon on renvoie null
     if (shoppingCard) {
         shoppingCardParse = JSON.parse(shoppingCard);
     }
@@ -119,24 +119,24 @@ function storeLocalStorageInString(key, value) {
  * 
  */
 function addToCard(id, name , img, price) {
+
     let product = {};
 
     let card = getCard();
+    //recuperation de l'id specifique passé au select pour récuperer l'attribut
+    let attr = document.querySelector('#add-Card-' + id).value;
 
     if (card && Array.isArray(card) && card.length != 0) {
-     
-
         product = {
-            id, name, img, price
+            id, name, img, price, attr
         }
 
         card.push(product);
-
         storeLocalStorageInString('panier', card);
 
     }else{
         product = {
-          id, name, img, price
+          id, name, img, price, attr
         }
         storeLocalStorageInString('panier', [product]);
     }

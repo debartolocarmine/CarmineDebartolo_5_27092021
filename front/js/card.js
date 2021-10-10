@@ -28,7 +28,7 @@ function validateFormBeforSubmit(card) {
         const email = document.getElementById('cdFormEmail').value
 
         // je prépare ma forme à valider par le process Boostrap
-        var forms = document.querySelectorAll('.needs-validation');
+        const forms = document.querySelectorAll('.needs-validation');
         // Je lance la validation boostrap
         // @see https://getbootstrap.com/docs/5.0/forms/validation/
         Array.prototype.slice.call(forms)
@@ -52,7 +52,7 @@ function validateFormBeforSubmit(card) {
                             city: city,
                             email: email
                         };
-                        // Puis je sublit le formulaire
+                        // Puis je submit le formulaire
                         submitOrder(contact, card);
                     }
                     // Si les c ontrainte de valida tion des champs du formulaire sont valide
@@ -140,7 +140,8 @@ function loadCard() {
                 <th></th>
                 <th></th>
                 <th>Nom</th>
-                <th>Prix</th>
+                <th>Type</th>
+                <th>Prix</th>               
             </tr>
         </thead>
         <tbody>`;
@@ -151,6 +152,7 @@ function loadCard() {
                 <th scope="row">${e + 1}</th>
                 <td><img style="width:100px;height:auto" src="${produit.img}"></td>
                 <td>${produit.name}</td>
+                <td>${produit.attr}</td>
                 <td>${formatPriceToCurrency(parseInt(produit.price))}</td>
             </tr>`
             }
@@ -159,6 +161,7 @@ function loadCard() {
         <tr> 
             <th></th>
             <th></th>          
+            <th></th>
             <th></th>
             <th>Total<br>${getTotalPrice()}</th>
         </tr>`;
